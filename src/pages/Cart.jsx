@@ -87,9 +87,19 @@ export default function Cart() {
               <div style={{ fontWeight: "bold", fontSize: 20 }}>
                 Total: ₱{total}
               </div>
-              <button style={{ background: "var(--secondary)", color: "#fff", padding: "8px 24px", borderRadius: 4 }}>
+              <a
+                href="/checkout"
+                style={{
+                  background: "var(--secondary)",
+                  color: "#fff",
+                  padding: "8px 24px",
+                  borderRadius: 4,
+                  textDecoration: "none",
+                  fontWeight: "bold"
+                }}
+              >
                 Proceed to Checkout
-              </button>
+              </a>
             </div>
           </>
         )}
