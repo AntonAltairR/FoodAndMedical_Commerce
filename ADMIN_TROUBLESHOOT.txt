@@ -1,0 +1,37 @@
+# Troubleshooting Admin Access
+
+If you cannot access the admin side, please check the following:
+
+1. **Are both servers running?**
+   - Run: `npm run dev:all`
+   - You should see:
+     - "Express server running on http://localhost:5000"
+     - "VITE v7.1.7 ready in ... ➜ Local: http://localhost:5173" (or 5174)
+
+2. **Backend check:**
+   - Visit http://localhost:5000/ in your browser.
+   - You should see: "RomsPharma Backend API is running. Use /api/admin/* endpoints."
+
+3. **Frontend check:**
+   - Visit http://localhost:5173/ (or 5174) in your browser.
+   - The site should load.
+
+4. **Admin login:**
+   - Go to http://localhost:5173/admin/login
+   - Use:
+     - Username: admin
+     - Password: admin123
+
+5. **If login fails:**
+   - Open the browser console (F12) and Network tab.
+   - Try logging in and look for errors (CORS, 401, 500, etc.).
+   - Check the terminal where the backend is running for error messages.
+
+6. **If you see a CORS or network error:**
+   - Make sure you restarted the backend after the CORS fix.
+   - Try stopping all servers and running `npm run dev:all` again.
+
+7. **If you see "Invalid credentials":**
+   - The admin user may not exist. Re-run: `node server/db/init.cjs` to reset the admin user.
+
+If you still have issues, please copy any error messages from the browser console or backend terminal and share them for further help.

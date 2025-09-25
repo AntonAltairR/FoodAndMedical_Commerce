@@ -1,0 +1,22 @@
+# How to run both frontend and backend for your project
+
+Open two terminal windows/tabs in your project root, then run:
+
+Terminal 1 (Backend):
+---------------------
+node server/index.js
+
+Terminal 2 (Frontend):
+----------------------
+npm run dev
+
+# Access the frontend at:
+#   http://localhost:5173
+# (or http://localhost:5174 if 5173 is in use)
+
+# The backend API will be at:
+#   http://localhost:5000
+
+# Default admin login:
+#   Username: admin
+#   Password: admin123

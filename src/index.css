@@ -1,5 +1,135 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Modern Basic CSS for RomsPharma Commerce */
 
-/* Custom global styles can be added below */
+:root {
+  --primary: #2C7A7B;
+  --secondary: #F6AD55;
+  --neutral-light: #F7FAFC;
+  --neutral-dark: #2D3748;
+  --font-main: 'Segoe UI', 'Roboto', 'Open Sans', Arial, sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  background: var(--neutral-light);
+  color: var(--neutral-dark);
+  min-height: 100vh;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--secondary);
+}
+
+nav, footer {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(44, 122, 123, 0.04);
+}
+
+nav {
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav .container img {
+  width: 40px;
+  height: 40px;
+}
+nav .container .links {
+  display: flex;
+  gap: 1.5rem;
+}
+nav .container .links a {
+  color: var(--neutral-dark);
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+nav .container .links a:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  color: var(--primary);
+  margin-top: 0;
+}
+
+button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover {
+  background: var(--secondary);
+  color: var(--neutral-dark);
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(44, 122, 123, 0.08);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+footer {
+  margin-top: 2rem;
+  padding: 1rem 0;
+  text-align: center;
+  color: var(--neutral-dark);
+  font-size: 1rem;
+  background: #fff;
+  border-top: 1px solid #e2e8f0;
+}
+
+@media (max-width: 800px) {
+  .grid-2, .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .container {
+    width: 98%;
+  }
+}

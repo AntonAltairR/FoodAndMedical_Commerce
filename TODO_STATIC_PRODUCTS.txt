@@ -1,0 +1,10 @@
+# TODO: Convert to Static Product Storefront
+
+- [ ] Remove admin system (frontend: AdminLogin.jsx, AdminDashboard.jsx, admin routes in App.jsx)
+- [ ] Remove backend product/admin API usage from frontend
+- [ ] Create src/data/products.js with a large set of medical devices and food supplements
+- [ ] Update Products.jsx to use static product data
+- [ ] Update ProductDetail.jsx to use static product data
+- [ ] Ensure CartContext and cart functionality still work
+- [ ] Remove/disable backend code if not needed
+- [ ] Test full user flow: browse, view details, add to cart

@@ -1,0 +1,30 @@
+# How to Manually Check and Restart Your Servers
+
+## 1. Check Backend (Express)
+- In your backend terminal, you should see:
+  Express server running on http://localhost:5000
+- If not, start it with:
+  node server/index.js
+
+## 2. Check Frontend (Vite)
+- In your frontend terminal, you should see:
+  VITE v7.x ready in ... ➜ Local: http://localhost:5173 (or 5174)
+- If not, start it with:
+  npm run dev
+
+## 3. Ensure No Duplicate Backends
+- If you suspect multiple backend servers are running, stop all backend terminals and start only one with:
+  node server/index.js
+
+## 4. Test CORS in Browser
+- Go to http://localhost:5173/admin/login (or 5174 if Vite switched ports).
+- Open DevTools → Network tab.
+- Try logging in.
+- Click the OPTIONS request to /api/admin/login and check the Response Headers.
+- You should see:
+  Access-Control-Allow-Origin: *
+
+## 5. If you still see CORS errors:
+- Double-check that the backend terminal shows the startup message after your last code change.
+- Make sure you are not running an old backend process in another terminal.
+- If you see any error messages in the backend terminal, copy them and share for further help.
