@@ -6,6 +6,14 @@ const initialState = {
   items: [],
 };
 
+function loadCart() {
+  try {
+    const data = localStorage.getItem("cart");
+    if (data) return JSON.parse(data);
+  } catch {}
+  return initialState;
+}
+
 function cartReducer(state, action) {
   switch (action.type) {
     case "ADD_ITEM":
@@ -46,8 +54,14 @@ function cartReducer(state, action) {
   }
 }
 
+import { useEffect } from "react";
+
 export function CartProvider({ children }) {
-  const [state, dispatch] = useReducer(cartReducer, initialState);
+  const [state, dispatch] = useReducer(cartReducer, loadCart());
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(state));
+  }, [state]);
 
   const addItem = (item) => dispatch({ type: "ADD_ITEM", payload: item });
   const removeItem = (id) => dispatch({ type: "REMOVE_ITEM", payload: id });
